@@ -23,12 +23,12 @@ def generate_keys():
     with open(PUBLIC_KEY_FILE, "wb") as f:
         f.write(key.publickey().export_key())
 
-    print("✅ Đã tạo cặp khóa RSA trong thư mục 'keys/'.")
+    print("Đã tạo cặp khóa RSA trong thư mục 'keys/'.")
 
 # 2. Ký thông điệp
 def sign_message():
     if not os.path.exists(PRIVATE_KEY_FILE):
-        print("⚠️ Chưa có private.key, hãy tạo khóa trước!")
+        print("Chưa có private.key, hãy tạo khóa trước!")
         return
 
     private_key = RSA.import_key(open(PRIVATE_KEY_FILE, "rb").read())
@@ -51,10 +51,10 @@ def sign_message():
 # 3. Xác minh chữ ký
 def verify_signature():
     if not os.path.exists(PUBLIC_KEY_FILE):
-        print("⚠️ Chưa có public.key, hãy tạo khóa trước!")
+        print("Chưa có public.key, hãy tạo khóa trước!")
         return
     if not os.path.exists(MESSAGE_FILE) or not os.path.exists(SIGNATURE_FILE):
-        print("⚠️ Chưa có message.txt hoặc signature.pem, hãy ký thông điệp trước!")
+        print("Chưa có message.txt hoặc signature.pem, hãy ký thông điệp trước!")
         return
 
     public_key = RSA.import_key(open(PUBLIC_KEY_FILE, "rb").read())
@@ -97,7 +97,7 @@ def generate_keys():
 # 2. Ký thông điệp
 def sign_message():
     if not os.path.exists(PRIVATE_KEY_FILE):
-        print("⚠️ Chưa có private.key, hãy tạo khóa trước!")
+        print("Chưa có private.key, hãy tạo khóa trước!")
         return
 
     private_key = RSA.import_key(open(PRIVATE_KEY_FILE, "rb").read())
@@ -119,10 +119,10 @@ def sign_message():
 # 3. Xác minh chữ ký
 def verify_signature():
     if not os.path.exists(PUBLIC_KEY_FILE):
-        print("⚠️ Chưa có public.key, hãy tạo khóa trước!")
+        print("Chưa có public.key, hãy tạo khóa trước!")
         return
     if not os.path.exists(MESSAGE_FILE) or not os.path.exists(SIGNATURE_FILE):
-        print("⚠️ Chưa có message.txt hoặc signature.pem, hãy ký thông điệp trước!")
+        print("Chưa có message.txt hoặc signature.pem, hãy ký thông điệp trước!")
         return
 
     public_key = RSA.import_key(open(PUBLIC_KEY_FILE, "rb").read())
@@ -157,7 +157,7 @@ def menu():
             print("Thoát chương trình.")
             break
         else:
-            print("⚠️ Lựa chọn không hợp lệ, vui lòng nhập 1-4.")
+            print("Lựa chọn không hợp lệ, vui lòng nhập 1-4.")
 
 
 if __name__ == "__main__":
